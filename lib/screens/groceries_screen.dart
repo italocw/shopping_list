@@ -83,18 +83,16 @@ class _GroceriesScreenState extends State<GroceriesScreen> {
                 id: id, name: name, quantity: quantity, category: category);
             loadedItems.add(currentItem);
           }
-
-          setState(() {
-            _error = null;
-            _groceries = loadedItems;
-            _isLoading = false;
-          });
         }
+        setState(() {
+          _error = null;
+          _groceries = loadedItems;
+          _isLoading = false;
+        });
       }
     } catch (exception) {
       setState(() {
         _error = 'Something went wrong';
-
         _isLoading = false;
       });
     }
